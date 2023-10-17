@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/screens/home.dart';
-import 'package:login_app/widgets/appbar.dart';
+import 'package:login_app/widgets/app_bar.dart';
 
 void main() {
   runApp(const MyApp());

@@ -10,7 +10,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: tdPink,
+      backgroundColor: whiteColor,
       title: const Text('Julienz app'),
       leading: IconButton(
         icon: const Icon(Icons.menu_rounded), // Icono izquierdo
