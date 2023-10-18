@@ -14,41 +14,20 @@ class BuildBody extends StatefulWidget {
 class _BuildBodyState extends State<BuildBody> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Align(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Login',
-              style: TextStyle(fontSize: 43, fontFamily: 'Neue Power'),
+            MainText(
+              text: 'Login',
             ),
-            RichText(
-              text: TextSpan(
-                style: const TextStyle(
-                  fontFamily: 'Neue Power',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
-                ),
-                children: [
-                  const TextSpan(text: 'New in Julienz App?  '),
-                  TextSpan(
-                    text: 'Register',
-                    style: const TextStyle(
-                      decoration: TextDecoration.underline,
-                      color: primaryColor, // Color del hipervínculo
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        print('Haz clickeado en Register');
-                      },
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 50.0),
-            const Padding(
+            SecondaryText(
+                firstText: 'New in Julienz App?',
+                hyperlinkText: 'Create an account',
+                fontSize: 20),
+            SizedBox(height: 50.0),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
@@ -57,8 +36,8 @@ class _BuildBodyState extends State<BuildBody> {
                 ),
               ),
             ),
-            const SizedBox(height: 50.0),
-            const Padding(
+            SizedBox(height: 50.0),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
@@ -69,6 +48,69 @@ class _BuildBodyState extends State<BuildBody> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MainText extends StatelessWidget {
+  final String text;
+  final double fontSize;
+
+  const MainText({
+    super.key,
+    required this.text,
+    this.fontSize = 20,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: fontSize, fontFamily: 'Neue Power'),
+      ),
+    );
+  }
+}
+
+class SecondaryText extends StatelessWidget {
+  final String firstText;
+  final String hyperlinkText;
+  final double fontSize;
+
+  const SecondaryText({
+    super.key,
+    required this.firstText,
+    required this.hyperlinkText,
+    this.fontSize = 20,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+          fontFamily: 'Neue Power',
+          fontSize: fontSize,
+          fontWeight: FontWeight.w400,
+          color: blackColor,
+        ),
+        children: [
+          TextSpan(text: firstText),
+          TextSpan(
+            text: hyperlinkText,
+            style: const TextStyle(
+              decoration: TextDecoration.underline,
+              color: primaryColor, // Color del hipervínculo
+            ),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                print('Haz clickeado en Register');
+              },
+          )
+        ],
       ),
     );
   }
