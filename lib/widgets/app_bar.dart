@@ -13,12 +13,12 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: whiteColor,
       title: const Text('Julienz app'),
       leading: IconButton(
-        icon: const Icon(Icons.menu_rounded), // Icono izquierdo
+        icon: const Icon(Icons.search), // Icono izquierdo
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
-          icon: const Icon(Icons.search), // Icono derecho
+          icon: const Icon(Icons.menu_rounded), // Icono derecho
           onPressed: () {},
         ),
       ],
