@@ -27,26 +27,30 @@ class _BuildBodyState extends State<BuildBody> {
                 hyperlinkText: 'Create an account',
                 fontSize: 20),
             SizedBox(height: 50.0),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
-            ),
-            SizedBox(height: 50.0),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
-            ),
+            InputField(hintText: 'Ingrese el usuario'),
+            InputField(hintText: 'Ingrese la contraseña'),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class InputField extends StatelessWidget {
+  final String hintText;
+  const InputField({
+    super.key,
+    required this.hintText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+      child: TextField(
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          hintText: hintText,
         ),
       ),
     );
