@@ -28,11 +28,17 @@ class _BuildBodyState extends State<BuildBody> {
             SecondaryText(
                 firstText: 'New in Julienz App?', // Primer fragmento de texto
                 hyperlinkText:
-                    'Create an account', // Segundo fragmento de texto (hipervínculo)
-                fontSize: 22), // Tamaño de fuente
+                    'Create an acount', // Segundo fragmento de texto (hipervínculo)
+                fontSize: 18), // Tamaño de fuente
             SizedBox(height: 50.0), // Espacio en blanco vertical
-            InputField(hintText: 'Ingrese el usuario'),
-            InputField(hintText: 'Ingrese la contraseña'),
+            InputField(
+              hintText: 'Enter Email adres',
+              inputName: 'Email',
+            ),
+            InputField(
+              hintText: 'Enter password',
+              inputName: 'Paswor',
+            )
           ],
         ),
       ),
@@ -42,10 +48,11 @@ class _BuildBodyState extends State<BuildBody> {
 
 class InputField extends StatelessWidget {
   final String hintText; // Texto de sugerencia para el campo de entrada
+  final String inputName; // Texto nombre del input
   const InputField({
-    // Constructor del campo de entrada
     super.key,
     required this.hintText,
+    required this.inputName,
   });
 
   @override
@@ -53,11 +60,23 @@ class InputField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
           horizontal: 8, vertical: 16), // Espaciado horizontal y vertical
-      child: TextField(
-        decoration: InputDecoration(
-          border: const OutlineInputBorder(),
-          hintText: hintText, // Texto de sugerencia
-        ),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              inputName,
+              style: const TextStyle(
+                  fontFamily: 'Neue Power', fontWeight: FontWeight.w600),
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              hintText: hintText,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -70,14 +89,14 @@ class MainText extends StatelessWidget {
   const MainText({
     super.key,
     required this.text,
-    this.fontSize = 20,
+    this.fontSize = 32,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.fromLTRB(16, 0, 0, 0), // Espaciado personalizado
+          const EdgeInsets.fromLTRB(16, 0, 0, 8), // Espaciado personalizado
       child: Text(
         text,
         style: TextStyle(
