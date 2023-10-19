@@ -1,14 +1,16 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:login_app/constants/colors.dart';
+import 'package:flutter/gestures.dart'; // Importación de la librería de gestos
+import 'package:flutter/material.dart'; // Importación de la librería de Flutter
+import 'package:login_app/constants/colors.dart'; // Importación de un archivo de constantes de colores
 
 class BuildBody extends StatefulWidget {
   const BuildBody({
+    // Constructor de la clase BuildBody
     super.key,
   });
 
   @override
-  State<BuildBody> createState() => _BuildBodyState();
+  State<BuildBody> createState() =>
+      _BuildBodyState(); // Método para crear el estado de BuildBody
 }
 
 class _BuildBodyState extends State<BuildBody> {
@@ -19,14 +21,16 @@ class _BuildBodyState extends State<BuildBody> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 35.0), // Espacio en blanco vertical
             MainText(
               text: 'Login',
             ),
             SecondaryText(
-                firstText: 'New in Julienz App?',
-                hyperlinkText: 'Create an account',
-                fontSize: 20),
-            SizedBox(height: 50.0),
+                firstText: 'New in Julienz App?', // Primer fragmento de texto
+                hyperlinkText:
+                    'Create an account', // Segundo fragmento de texto (hipervínculo)
+                fontSize: 22), // Tamaño de fuente
+            SizedBox(height: 50.0), // Espacio en blanco vertical
             InputField(hintText: 'Ingrese el usuario'),
             InputField(hintText: 'Ingrese la contraseña'),
           ],
@@ -37,8 +41,9 @@ class _BuildBodyState extends State<BuildBody> {
 }
 
 class InputField extends StatelessWidget {
-  final String hintText;
+  final String hintText; // Texto de sugerencia para el campo de entrada
   const InputField({
+    // Constructor del campo de entrada
     super.key,
     required this.hintText,
   });
@@ -46,11 +51,12 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+      padding: const EdgeInsets.symmetric(
+          horizontal: 8, vertical: 16), // Espaciado horizontal y vertical
       child: TextField(
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          hintText: hintText,
+          hintText: hintText, // Texto de sugerencia
         ),
       ),
     );
@@ -58,8 +64,8 @@ class InputField extends StatelessWidget {
 }
 
 class MainText extends StatelessWidget {
-  final String text;
-  final double fontSize;
+  final String text; // Texto a mostrar
+  final double fontSize; // Tamaño de fuente
 
   const MainText({
     super.key,
@@ -70,19 +76,24 @@ class MainText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+      padding:
+          const EdgeInsets.fromLTRB(16, 0, 0, 0), // Espaciado personalizado
       child: Text(
         text,
-        style: TextStyle(fontSize: fontSize, fontFamily: 'Neue Power'),
+        style: TextStyle(
+            // Estilo del texto
+            fontSize: fontSize, // Tamaño de fuente
+            fontFamily: 'Neue Power', // Fuente
+            fontWeight: FontWeight.w600), // Peso de la fuente
       ),
     );
   }
 }
 
 class SecondaryText extends StatelessWidget {
-  final String firstText;
-  final String hyperlinkText;
-  final double fontSize;
+  final String firstText; // Primer fragmento de texto
+  final String hyperlinkText; // Segundo fragmento de texto (hipervínculo)
+  final double fontSize; // Tamaño de fuente
 
   const SecondaryText({
     super.key,
@@ -93,28 +104,31 @@ class SecondaryText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: TextStyle(
-          fontFamily: 'Neue Power',
-          fontSize: fontSize,
-          fontWeight: FontWeight.w400,
-          color: blackColor,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+      child: RichText(
+        text: TextSpan(
+          style: TextStyle(
+            fontFamily: 'Neue Power', // Fuente
+            fontSize: fontSize, // Tamaño de fuente
+            fontWeight: FontWeight.w400, // Peso de la fuente
+            color: blackColor, // Color del texto
+          ),
+          children: [
+            TextSpan(text: firstText), // Primer fragmento de texto
+            TextSpan(
+              text: hyperlinkText, // Segundo fragmento de texto (hipervínculo)
+              style: const TextStyle(
+                decoration: TextDecoration.underline,
+                color: primaryColor, // Color del hipervínculo
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  print('Haz clickeado en Register');
+                },
+            )
+          ],
         ),
-        children: [
-          TextSpan(text: firstText),
-          TextSpan(
-            text: hyperlinkText,
-            style: const TextStyle(
-              decoration: TextDecoration.underline,
-              color: primaryColor, // Color del hipervínculo
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                print('Haz clickeado en Register');
-              },
-          )
-        ],
       ),
     );
   }
