@@ -36,7 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: BuildAppBar(),
-      body: BuildBody(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: BuildBody(),
+      ),
     );
   }
 }

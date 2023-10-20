@@ -17,14 +17,14 @@ class SecondaryText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
       child: RichText(
         text: TextSpan(
           style: TextStyle(
-            fontFamily: 'Neue Power', // Fuente
-            fontSize: fontSize, // Tamaño de fuente
-            fontWeight: FontWeight.w400, // Peso de la fuente
-            color: blackColor, // Color del texto
+            fontFamily: 'Neue Power',
+            fontSize: fontSize,
+            fontWeight: FontWeight.w400,
+            color: blackColor,
           ),
           children: [
             TextSpan(text: firstText), // Primer fragmento de texto

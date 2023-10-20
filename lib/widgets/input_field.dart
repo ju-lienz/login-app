@@ -13,8 +13,7 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 8, vertical: 16), // Espaciado horizontal y vertical
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
       child: Column(
         children: [
           Align(
@@ -27,16 +26,22 @@ class InputField extends StatelessWidget {
           ),
           TextField(
             decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              hintText: hintText,
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: primaryColor, width: 2.0),
+              filled: true,
+              fillColor: greyColor,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
               ),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: disabledColor, width: 2.0),
+              hintText: hintText,
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: primaryColor, width: 2.0),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: greyColor, width: 2.0),
+                borderRadius: BorderRadius.circular(15.0),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

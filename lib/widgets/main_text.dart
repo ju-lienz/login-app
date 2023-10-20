@@ -13,15 +13,13 @@ class MainText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsets.fromLTRB(16, 0, 0, 8), // Espaciado personalizado
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
       child: Text(
         text,
         style: TextStyle(
-            // Estilo del texto
-            fontSize: fontSize, // Tamaño de fuente
-            fontFamily: 'Neue Power', // Fuente
-            fontWeight: FontWeight.w600), // Peso de la fuente
+            fontSize: fontSize,
+            fontFamily: 'Neue Power',
+            fontWeight: FontWeight.w600),
       ),
     );
   }

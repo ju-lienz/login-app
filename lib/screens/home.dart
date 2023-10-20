@@ -46,24 +46,3 @@ class _BuildBodyState extends State<BuildBody> {
     );
   }
 }
-
-
-
-// TextField(
-//   decoration: InputDecoration(
-//     labelText: 'Usuario', // Etiqueta del campo
-//     hintText: 'Ingrese el usuario', // Texto de sugerencia dentro del campo
-//     prefixIcon: Icon(Icons.person), // Icono antes del campo
-//     suffixIcon: Icon(Icons.check), // Icono después del campo
-//     enabledBorder: OutlineInputBorder( // Borde cuando el campo está habilitado
-//       borderSide: BorderSide(color: Colors.blue, width: 2.0),
-//     ),
-//     focusedBorder: OutlineInputBorder( // Borde cuando el campo está enfocado
-//       borderSide: BorderSide(color: Colors.green, width: 2.0),
-//     ),
-//     labelStyle: TextStyle(color: Colors.blue), // Estilo de la etiqueta
-//     hintStyle: TextStyle(color: Colors.grey), // Estilo del texto de sugerencia
-//     prefixStyle: TextStyle(color: Colors.blue), // Estilo del icono antes del campo
-//     suffixStyle: TextStyle(color: Colors.green), // Estilo del icono después del campo
-//   ),
-// )
