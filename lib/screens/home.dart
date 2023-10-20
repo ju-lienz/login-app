@@ -1,6 +1,7 @@
-import 'package:flutter/gestures.dart'; // Importación de la librería de gestos
 import 'package:flutter/material.dart'; // Importación de la librería de Flutter
-import 'package:login_app/constants/colors.dart'; // Importación de un archivo de constantes de colores
+import 'package:login_app/widgets/input_field.dart';
+import 'package:login_app/widgets/main_text.dart';
+import 'package:login_app/widgets/secondary_text.dart';
 
 class BuildBody extends StatefulWidget {
   const BuildBody({
@@ -32,7 +33,7 @@ class _BuildBodyState extends State<BuildBody> {
                 fontSize: 18), // Tamaño de fuente
             SizedBox(height: 50.0), // Espacio en blanco vertical
             InputField(
-              hintText: 'Enter Email adres',
+              hintText: 'Enter Email adress',
               inputName: 'Email',
             ),
             InputField(
@@ -46,109 +47,23 @@ class _BuildBodyState extends State<BuildBody> {
   }
 }
 
-class InputField extends StatelessWidget {
-  final String hintText; // Texto de sugerencia para el campo de entrada
-  final String inputName; // Texto nombre del input
-  const InputField({
-    super.key,
-    required this.hintText,
-    required this.inputName,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 8, vertical: 16), // Espaciado horizontal y vertical
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              inputName,
-              style: const TextStyle(
-                  fontFamily: 'Neue Power', fontWeight: FontWeight.w600),
-            ),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              hintText: hintText,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
-class MainText extends StatelessWidget {
-  final String text; // Texto a mostrar
-  final double fontSize; // Tamaño de fuente
-
-  const MainText({
-    super.key,
-    required this.text,
-    this.fontSize = 32,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.fromLTRB(16, 0, 0, 8), // Espaciado personalizado
-      child: Text(
-        text,
-        style: TextStyle(
-            // Estilo del texto
-            fontSize: fontSize, // Tamaño de fuente
-            fontFamily: 'Neue Power', // Fuente
-            fontWeight: FontWeight.w600), // Peso de la fuente
-      ),
-    );
-  }
-}
-
-class SecondaryText extends StatelessWidget {
-  final String firstText; // Primer fragmento de texto
-  final String hyperlinkText; // Segundo fragmento de texto (hipervínculo)
-  final double fontSize; // Tamaño de fuente
-
-  const SecondaryText({
-    super.key,
-    required this.firstText,
-    required this.hyperlinkText,
-    this.fontSize = 20,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-      child: RichText(
-        text: TextSpan(
-          style: TextStyle(
-            fontFamily: 'Neue Power', // Fuente
-            fontSize: fontSize, // Tamaño de fuente
-            fontWeight: FontWeight.w400, // Peso de la fuente
-            color: blackColor, // Color del texto
-          ),
-          children: [
-            TextSpan(text: firstText), // Primer fragmento de texto
-            TextSpan(
-              text: hyperlinkText, // Segundo fragmento de texto (hipervínculo)
-              style: const TextStyle(
-                decoration: TextDecoration.underline,
-                color: primaryColor, // Color del hipervínculo
-              ),
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  print('Haz clickeado en Register');
-                },
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+// TextField(
+//   decoration: InputDecoration(
+//     labelText: 'Usuario', // Etiqueta del campo
+//     hintText: 'Ingrese el usuario', // Texto de sugerencia dentro del campo
+//     prefixIcon: Icon(Icons.person), // Icono antes del campo
+//     suffixIcon: Icon(Icons.check), // Icono después del campo
+//     enabledBorder: OutlineInputBorder( // Borde cuando el campo está habilitado
+//       borderSide: BorderSide(color: Colors.blue, width: 2.0),
+//     ),
+//     focusedBorder: OutlineInputBorder( // Borde cuando el campo está enfocado
+//       borderSide: BorderSide(color: Colors.green, width: 2.0),
+//     ),
+//     labelStyle: TextStyle(color: Colors.blue), // Estilo de la etiqueta
+//     hintStyle: TextStyle(color: Colors.grey), // Estilo del texto de sugerencia
+//     prefixStyle: TextStyle(color: Colors.blue), // Estilo del icono antes del campo
+//     suffixStyle: TextStyle(color: Colors.green), // Estilo del icono después del campo
+//   ),
+// )
