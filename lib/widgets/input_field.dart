@@ -18,10 +18,13 @@ class InputField extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.bottomLeft,
-            child: Text(
-              inputName,
-              style: const TextStyle(
-                  fontFamily: 'Neue Power', fontWeight: FontWeight.w600),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+              child: Text(
+                inputName,
+                style: const TextStyle(
+                    fontFamily: 'Neue Power', fontWeight: FontWeight.w600),
+              ),
             ),
           ),
           TextField(
