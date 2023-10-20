@@ -25,7 +25,8 @@ class PrincipalButton extends StatelessWidget {
           style: TextStyle(
               color: whiteColor,
               fontFamily: 'Neue Power',
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w600,
+              fontSize: 18),
         ),
       ),
     );

@@ -27,7 +27,7 @@ class _BuildBodyState extends State<BuildBody> {
               text: 'Login',
             ),
             SecondaryText(
-                firstText: 'New in Julienz App?', // Primer fragmento de texto
+                firstText: 'New in Julienz App?  ', // Primer fragmento de texto
                 hyperlinkText:
                     'Create an acount', // Segundo fragmento de texto (hipervínculo)
                 fontSize: 18),
