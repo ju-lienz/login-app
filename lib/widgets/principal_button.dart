@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/constants/colors.dart';
+import 'package:login_app/screens/home.dart';
 
 class PrincipalButton extends StatelessWidget {
   const PrincipalButton({
@@ -19,7 +20,12 @@ class PrincipalButton extends StatelessWidget {
                 15), // Bordes redondeados // Borde personalizado
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+          );
+        },
         child: const Text(
           "Login",
           style: TextStyle(
