@@ -34,9 +34,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: BuildAppBar(),
-      body: Padding(
+    return Scaffold(
+      appBar: BuildAppBar(
+        leadingIcon: Icons.keyboard_backspace_rounded,
+        leading: IconButton(
+          icon: const Icon(Icons.keyboard_backspace_rounded, size: 38),
+          onPressed: () {},
+        ),
+      ),
+      body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.0),
         child: BuildBody(),
       ),

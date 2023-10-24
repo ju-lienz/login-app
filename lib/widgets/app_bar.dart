@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:login_app/constants/colors.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BuildAppBar({Key? key}) : super(key: key);
+  const BuildAppBar(
+      {Key? key, required IconData leadingIcon, required IconButton leading})
+      : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

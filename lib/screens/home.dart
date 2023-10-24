@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/widgets/app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,25 +22,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Mi Aplicación Flutter'),
+      appBar: BuildAppBar(
+        leadingIcon: Icons.arrow_back_rounded,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded, size: 38),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               '¡Bienvenido a mi aplicación Flutter!',
               style: TextStyle(fontSize: 18),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Presionar'),
-            ),
+            SizedBox(height: 20),
           ],
         ),
       ),
