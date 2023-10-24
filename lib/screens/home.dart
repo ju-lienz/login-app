@@ -19,12 +19,14 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  IconData? get infoIconData => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BuildAppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded, size: 38),
+          icon: Icon(infoIconData, size: 38),
           onPressed: () {
             Navigator.pop(context);
           },

@@ -24,12 +24,16 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (context) => const MyHomePage(title: "hola")),
+                  builder: (context) => const MyHomePage(title: "MyHomePage")),
             );
           }),
       actions: <Widget>[
         IconButton(
-          icon: const Icon(Icons.menu_rounded, size: 38),
+          icon: const Icon(
+            Icons.menu_rounded,
+            size: 38,
+            color: blackColor,
+          ),
           onPressed: () {},
         ),
       ],

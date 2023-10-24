@@ -16,8 +16,7 @@ class PrincipalButton extends StatelessWidget {
           elevation: 0,
           minimumSize: const Size(600, 50),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-                15), // Bordes redondeados // Borde personalizado
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
         onPressed: () {

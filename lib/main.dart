@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/constants/colors.dart';
 import 'package:login_app/screens/login.dart';
 import 'package:login_app/widgets/app_bar.dart';
 
@@ -39,10 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: BuildAppBar(
         leading: IconButton(
-          icon: Icon(infoIconData, size: 38),
+          icon: Icon(
+            infoIconData,
+            size: 38,
+            color: blackColor,
+          ),
           onPressed: () {},
         ),
-        infoIconData: Icons.keyboard_backspace_rounded,
+        infoIconData: Icons.search_rounded,
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.0),
