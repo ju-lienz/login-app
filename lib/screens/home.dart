@@ -23,13 +23,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BuildAppBar(
-        leadingIcon: Icons.arrow_back_rounded,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded, size: 38),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        infoIconData: Icons.arrow_back_rounded,
       ),
       body: const Center(
         child: Column(

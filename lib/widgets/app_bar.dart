@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/constants/colors.dart';
+import 'package:login_app/main.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BuildAppBar(
-      {Key? key, required IconData leadingIcon, required IconButton leading})
-      : super(key: key);
+  final IconData infoIconData;
+
+  const BuildAppBar({
+    Key? key,
+    required IconButton leading,
+    required this.infoIconData,
+  }) : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -14,13 +19,17 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: whiteColor,
       leading: IconButton(
-        icon: const Icon(Icons.search, size: 38),
-        // Icono izquierdo
-        onPressed: () {},
-      ),
+          icon: Icon(infoIconData, size: 38),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const MyHomePage(title: "hola")),
+            );
+          }),
       actions: <Widget>[
         IconButton(
-          icon: const Icon(Icons.menu_rounded, size: 38), // Icono derecho
+          icon: const Icon(Icons.menu_rounded, size: 38),
           onPressed: () {},
         ),
       ],

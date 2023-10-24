@@ -5,17 +5,16 @@ import 'package:login_app/widgets/main_text.dart';
 import 'package:login_app/widgets/principal_button.dart';
 import 'package:login_app/widgets/secondary_text.dart';
 
-class BuildBody extends StatefulWidget {
-  const BuildBody({
-    // Constructor de la clase BuildBody
+class BuildLoginScreen extends StatefulWidget {
+  const BuildLoginScreen({
     super.key,
   });
 
   @override
-  State<BuildBody> createState() => _BuildBodyState();
+  State<BuildLoginScreen> createState() => _BuildLoginScreenState();
 }
 
-class _BuildBodyState extends State<BuildBody> {
+class _BuildLoginScreenState extends State<BuildLoginScreen> {
   bool isChecked = false;
   @override
   Widget build(BuildContext context) {

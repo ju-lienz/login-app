@@ -32,19 +32,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  IconData? get infoIconData => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BuildAppBar(
-        leadingIcon: Icons.keyboard_backspace_rounded,
         leading: IconButton(
-          icon: const Icon(Icons.keyboard_backspace_rounded, size: 38),
+          icon: Icon(infoIconData, size: 38),
           onPressed: () {},
         ),
+        infoIconData: Icons.keyboard_backspace_rounded,
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.0),
-        child: BuildBody(),
+        child: BuildLoginScreen(),
       ),
     );
   }
