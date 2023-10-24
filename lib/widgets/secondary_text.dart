@@ -6,6 +6,7 @@ class SecondaryText extends StatelessWidget {
   final String firstText; // Primer fragmento de texto
   final String hyperlinkText; // Segundo fragmento de texto (hipervínculo)
   final double fontSize; // Tamaño de fuente
+  // TODO añadir variable bool para agregar linea de hipervinculo
 
   const SecondaryText({
     super.key,
@@ -34,10 +35,7 @@ class SecondaryText extends StatelessWidget {
                 decoration: TextDecoration.underline,
                 color: primaryColor, // Color del hipervínculo
               ),
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  print('Haz clickeado en Register');
-                },
+              recognizer: TapGestureRecognizer()..onTap = () {},
             )
           ],
         ),

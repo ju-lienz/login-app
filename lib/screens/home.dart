@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/widgets/app_bar.dart';
+import 'package:login_app/widgets/main_text.dart';
+import 'package:login_app/widgets/secondary_text.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,17 +36,10 @@ class HomeScreen extends StatelessWidget {
         infoIconData: Icons.arrow_back_rounded,
       ),
       body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 20),
-            Text(
-              '¡Bienvenido a mi aplicación Flutter!',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 20),
-          ],
-        ),
+        child: Column(children: [
+          SecondaryText(firstText: 'Welcome back  ', hyperlinkText: 'Julieta'),
+          MainText(text: 'Dashboard'),
+        ]),
       ),
     );
   }
