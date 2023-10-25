@@ -35,11 +35,17 @@ class HomeScreen extends StatelessWidget {
         ),
         infoIconData: Icons.arrow_back_rounded,
       ),
-      body: const Center(
-        child: Column(children: [
-          SecondaryText(firstText: 'Welcome back  ', hyperlinkText: 'Julieta'),
+      body: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 35.0),
+          SecondaryText(
+            firstText: 'Welcome back  ',
+            hyperlinkText: 'Julieta',
+            isLinked: false,
+          ),
           MainText(text: 'Dashboard'),
-        ]),
+        ],
       ),
     );
   }

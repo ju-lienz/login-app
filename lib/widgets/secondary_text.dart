@@ -6,6 +6,7 @@ class SecondaryText extends StatelessWidget {
   final String firstText; // Primer fragmento de texto
   final String hyperlinkText; // Segundo fragmento de texto (hipervínculo)
   final double fontSize; // Tamaño de fuente
+  final bool isLinked;
   // TODO añadir variable bool para agregar linea de hipervinculo
 
   const SecondaryText({
@@ -13,6 +14,7 @@ class SecondaryText extends StatelessWidget {
     required this.firstText,
     required this.hyperlinkText,
     this.fontSize = 20,
+    required this.isLinked,
   });
 
   @override
@@ -31,12 +33,16 @@ class SecondaryText extends StatelessWidget {
             TextSpan(text: firstText), // Primer fragmento de texto
             TextSpan(
               text: hyperlinkText, // Segundo fragmento de texto (hipervínculo)
-              style: const TextStyle(
-                decoration: TextDecoration.underline,
-                color: primaryColor, // Color del hipervínculo
-              ),
+              style: isLinked
+                  ? const TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: primaryColor, // Color del hipervínculo
+                    )
+                  : const TextStyle(
+                      color: primaryColor, // Color del hipervínculo
+                    ),
               recognizer: TapGestureRecognizer()..onTap = () {},
-            )
+            ),
           ],
         ),
       ),

@@ -17,9 +17,10 @@ class MainText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            fontSize: fontSize,
-            fontFamily: 'Neue Power',
-            fontWeight: FontWeight.w600),
+          fontSize: fontSize,
+          fontFamily: 'Neue Power',
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }

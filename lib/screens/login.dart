@@ -28,10 +28,12 @@ class _BuildLoginScreenState extends State<BuildLoginScreen> {
               text: 'Login',
             ),
             const SecondaryText(
-                firstText: 'New in Julienz App?  ', // Primer fragmento de texto
-                hyperlinkText:
-                    'Create an acount', // Segundo fragmento de texto (hipervínculo)
-                fontSize: 18),
+              firstText: 'New in Julienz App?  ', // Primer fragmento de texto
+              hyperlinkText:
+                  'Create an acount', // Segundo fragmento de texto (hipervínculo)
+              fontSize: 18,
+              isLinked: true,
+            ),
             const SizedBox(height: 50.0),
             const InputField(
               hintText: 'Enter Email adress',
